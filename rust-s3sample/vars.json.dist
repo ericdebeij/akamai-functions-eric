@@ -1,0 +1,7 @@
+{
+  "s3_access_key": "YOUR-ACCESS-KEY",
+  "s3_secret_key": "YOUR-SECRET-KEY",
+  "s3_region": "nl-ams-1",
+  "s3_endpoint": "nl-ams-1.linodeobjects.com",
+  "s3_bucket": "YOUR-BUCKET-NAME"
+}

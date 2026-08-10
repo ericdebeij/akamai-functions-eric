@@ -1,0 +1,21 @@
+#:schema https://schemas.spinframework.dev/spin/manifest-v2/latest.json
+
+spin_manifest_version = 2
+
+[application]
+name = "http-mirror"
+version = "0.1.0"
+authors = ["Eric Debeij <hdebeij@akamai.com>"]
+description = ""
+targets = ["akamai-functions"]
+
+[[trigger.http]]
+route = "/..."
+component = "http-mirror"
+
+[component.http-mirror]
+source = "target/wasm32-wasip1/release/http_mirror.wasm"
+allowed_outbound_hosts = []
+[component.http-mirror.build]
+command = "cargo build --target wasm32-wasip1 --release"
+watch = ["src/**/*.rs", "Cargo.toml"]

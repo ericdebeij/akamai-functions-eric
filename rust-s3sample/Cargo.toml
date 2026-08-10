@@ -1,0 +1,23 @@
+[package]
+name = "s3sample"
+authors = ["Eric Debeij <hdebeij@akamai.com>"]
+description = ""
+version = "0.1.0"
+rust-version = "1.93"
+edition = "2024"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+anyhow = "1.0.104"
+bytes = "1.12.1"
+chrono = { version = "0.4.45", features = ["wasmbind"] }
+form_urlencoded = "1.2.2"
+hex = "0.4.3"
+hmac = "0.13.0"
+http = "1.5.0"
+sha2 = "0.11.0"
+spin-sdk = "6.0.0"
+
+

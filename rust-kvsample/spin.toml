@@ -1,0 +1,23 @@
+#:schema https://schemas.spinframework.dev/spin/manifest-v2/latest.json
+
+spin_manifest_version = 2
+
+[application]
+name = "kvsample"
+version = "0.1.0"
+authors = ["Eric Debeij <hdebeij@akamai.com>"]
+description = ""
+targets = ["akamai-functions"]
+
+[[trigger.http]]
+route = "/..."
+component = "kvsample"
+
+[component.kvsample]
+source = "target/wasm32-wasip2/release/kvsample.wasm"
+allowed_outbound_hosts = []
+key_value_stores = [ "default" ]
+
+[component.kvsample.build]
+command = "cargo build --target wasm32-wasip2 --release"
+watch = ["src/**/*.rs", "Cargo.toml"]

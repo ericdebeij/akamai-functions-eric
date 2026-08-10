@@ -1,0 +1,8 @@
+target/
+.spin/
+.env
+vars.json
+.cargo_home/
+.rustup_home/
+*.log
+.spin-aka/
