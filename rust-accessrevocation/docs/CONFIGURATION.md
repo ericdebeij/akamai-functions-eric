@@ -1,11 +1,3 @@
----
-type: sample-configuration-guide
-title: Access Revocation sample configuration and integration
-author: copilot
-created: 2026-10-30
-updated: 2026-10-30
----
-
 # Configuration and integration
 
 ## Application variables

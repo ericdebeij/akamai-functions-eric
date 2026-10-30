@@ -9,6 +9,10 @@ Use at your own risk (review before use it).
 
 ## Samples in Rust
 
+- [rust-accessrevocation](rust-accessrevocation/README.md)
+  - A standalone HTTP function that accepts authenticated Grafana alert webhooks and submits firing-alert session IDs to the Akamai Access Revocation API.
+  - Demonstrates EdgeGrid signing in Rust and Spin outbound HTTP.
+
 - [rust-http-mirror](rust-http-mirror/README.md)
   - A simple HTTP mirror component that echoes the incoming request as JSON.
   - Useful for debugging request headers, body encoding, and how Spin exposes the full URL.
