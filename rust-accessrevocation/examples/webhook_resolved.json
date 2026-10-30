@@ -1,0 +1,11 @@
+{
+  "alerts": [
+    {
+      "status": "resolved",
+      "labels": {
+        "user": "sampleuser",
+        "stream_ids": "sampleuser-session01"
+      }
+    }
+  ]
+}

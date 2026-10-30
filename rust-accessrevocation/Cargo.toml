@@ -1,0 +1,26 @@
+# Version: 1.0  2026-10-30 Standalone credential-free sample manifest
+[package]
+name = "revokeaccess"
+description = "Grafana webhook to Akamai Access Revocation API sample"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+anyhow = "1"
+base64 = "0.22"
+bytes = "1"
+chrono = { version = "0.4", default-features = false, features = ["clock"] }
+futures-util = "0.3"
+hmac = "0.12"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+sha2 = "0.10"
+spin-sdk = { version = "6", default-features = false, features = ["http", "json", "variables", "export-sdk-language"] }
+subtle = "2"
+url = "2"
+uuid = { version = "1", features = ["v4"] }
+
+[workspace]

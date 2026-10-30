@@ -1,0 +1,41 @@
+#:schema https://schemas.spinframework.dev/spin/manifest-v2/latest.json
+# Version: 1.0  2026-10-30 Standalone sample application without deployment state
+spin_manifest_version = 2
+
+[application]
+name = "rust-accessrevocation"
+version = "0.1.0"
+description = "Protected Grafana webhook for session revocation"
+targets = ["akamai-functions"]
+
+[[trigger.http]]
+route = "/webhook"
+component = "revokeaccess"
+
+[variables]
+client_secret = { required = true }
+host = { required = true }
+access_token = { required = true }
+client_token = { required = true }
+revocation_list_id = { required = true }
+account_switch_key = { default = "" }
+webhook_secret = { required = true }
+revocation_duration_seconds = { default = "1800" }
+
+[component.revokeaccess]
+source = "target/wasm32-wasip2/release/revokeaccess.wasm"
+allowed_outbound_hosts = ["https://{{ host }}"]
+
+[component.revokeaccess.variables]
+client_secret = "{{ client_secret }}"
+host = "{{ host }}"
+access_token = "{{ access_token }}"
+client_token = "{{ client_token }}"
+revocation_list_id = "{{ revocation_list_id }}"
+account_switch_key = "{{ account_switch_key }}"
+webhook_secret = "{{ webhook_secret }}"
+revocation_duration_seconds = "{{ revocation_duration_seconds }}"
+
+[component.revokeaccess.build]
+command = "cargo build --locked --target wasm32-wasip2 --release"
+watch = ["src/**/*.rs", "Cargo.toml", "Cargo.lock"]

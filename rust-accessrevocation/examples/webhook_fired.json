@@ -1,0 +1,11 @@
+{
+  "alerts": [
+    {
+      "status": "firing",
+      "labels": {
+        "user": "sampleuser",
+        "stream_ids": " sampleuser-session01, sampleuser-session02, sampleuser-session03, sampleuser-session04, sampleuser-session05, sampleuser-session06 "
+      }
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+# Version: 1.0  2026-10-30 Exclude credentials, local state and generated artifacts
+/target/
+/.cargo-home/
+/.spin/
+/.spin-aka/
+/.env
+/.env.*
+!.env.example
+/env*.json
+*.edgerc
+.edgerc
+*.log
+.DS_Store
