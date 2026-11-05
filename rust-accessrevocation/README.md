@@ -103,7 +103,7 @@ Do not use the firing fixture for this no-op test: a firing notification
 attempts a real outbound revocation request. The fixture contains synthetic IDs
 for unit tests, not actual credentials or valid production sessions.
 
-## Akamai function test
+## Akamai function usage
 
 After testing, deploy the function on Akamai Functions
 ```sh
