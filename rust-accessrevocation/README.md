@@ -103,6 +103,21 @@ Do not use the firing fixture for this no-op test: a firing notification
 attempts a real outbound revocation request. The fixture contains synthetic IDs
 for unit tests, not actual credentials or valid production sessions.
 
+## Akamai function test
+
+After testing, deploy the function on Akamai Functions
+```sh
+spin aka login
+spin aka deploy --variable @env.json
+```
+
+Once deployed the endpoint shown can be configured in the delivery configuration used to access the function 
+
+The output of the function can be called with
+```sh
+spin aka logs
+```
+
 ## Behavior
 
 - Only `POST /webhook` with `Content-Type: application/json` and a matching
